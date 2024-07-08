@@ -1,0 +1,22 @@
+openapi: 3.0.1
+info:
+  title: Simple API
+  description: A simple API example
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+paths:
+  /hello:
+    get:
+      summary: Returns a greeting
+      responses:
+        '200':
+          description: A greeting message
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, World!

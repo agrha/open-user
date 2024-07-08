@@ -1,0 +1,28 @@
+openapi: 3.0.1
+info:
+  description: A simple API example
+  title: Simple API
+  version: 1.0.0
+servers:
+- url: http://localhost:8080
+paths:
+  /hello:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/_hello_get_200_response'
+          description: A greeting message
+      summary: Returns a greeting
+components:
+  schemas:
+    _hello_get_200_response:
+      example:
+        message: "Hello, World!"
+      properties:
+        message:
+          example: "Hello, World!"
+          type: string
+      type: object

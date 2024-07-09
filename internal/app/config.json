@@ -1,0 +1,10 @@
+{
+    "database": {
+      "brimerchant": {
+        "url": "172.18.246.104:3306",
+        "user": "brimerchant",
+        "password": "M3rCh@ntC3ria",
+        "name": "mma_dev"
+      }
+    }
+}

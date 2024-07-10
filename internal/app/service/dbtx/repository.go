@@ -1,14 +1,14 @@
 package dbtx
 
 import (
-	"database/sql"
+	"github.com/jinzhu/gorm"
 )
 
 type DbTxRepository struct {
-	db *sql.DB
+	db *gorm.DB
 }
 
-func NewDbTxRepository(db *sql.DB) *DbTxRepository {
+func NewDbTxRepository(db *gorm.DB) *DbTxRepository {
 	return &DbTxRepository{
 		db: db,
 	}

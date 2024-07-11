@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
-  title: Simple API
-  description: A simple API example
+  title: Open API Generator for user module
+  description: user module
   version: 1.0.0
 servers:
   - url: http://localhost:8080
@@ -20,3 +20,4 @@ paths:
                   message:
                     type: string
                     example: Hello, World!
+                    

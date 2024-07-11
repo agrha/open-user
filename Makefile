@@ -4,7 +4,8 @@ init: generate
 	go mod vendor
 
 generate: generate_api \
-	generate_mocks 
+	generate_mocks \
+	generate_wire 
 
 # Generates OpenAPI interface file
 generate_api: generated/api/api.server.gen.go generated/api/api.types.gen.go
@@ -26,10 +27,12 @@ $(INTERFACES_GEN_GO_FILES): %.mock.gen.go: %.go
 	@echo "Generating mocks $@ for $<"
 	mockgen -source=$< -destination=$@ -package=$(shell basename $(dir $<))
 
-
 clean:
 	rm -rf generated build vendor
 	find . -name "*.mock.gen.go" -type f -delete
 	find . -name "*.gen.go" -type f -not -path "./internal/db/gormgen/*" -delete
 	find . -name "*.out" -type f -delete
 	find . -name "wire_gen.go" -type f -delete
+
+generate_wire:
+	wire ./...

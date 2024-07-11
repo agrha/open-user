@@ -1,8 +1,6 @@
 package service
 
-import (
-	"agrha/open-user/internal/service/user"
-)
+import "open-user/internal/app/service/user"
 
 type Services struct {
 	UserService user.UserServiceInterface
